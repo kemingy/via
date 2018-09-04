@@ -4,14 +4,20 @@ Initialize your repository.
 
 ## Feature
 
-- [ ] `.gitignore`
+- [x] `.gitignore`
 - [ ] `License`
+
+## Toturail
+
+```sh
+via -i python -l mit
+```
 
 ## Support
 
 ### Ignore
 
-All the file is download from [github/gitignore](https://github.com/github/gitignore)
+All the file is downloaded from [github/gitignore](https://github.com/github/gitignore)
 
 ### License
 
