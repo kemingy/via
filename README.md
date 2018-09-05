@@ -6,11 +6,13 @@ Initialize your repository.
 
 - [x] `.gitignore`
 - [x] `License`
-- [ ] args
+- [x] args
 
 ## Toturail
 
 ```sh
+# download python .gitignore file and MIT License
+# file will be saved to current dir
 via -i python -l mit
 ```
 
@@ -18,11 +20,11 @@ via -i python -l mit
 
 ### Ignore
 
-All the file is downloaded from [github/gitignore](https://github.com/github/gitignore)
+All the files are downloaded from [github/gitignore](https://github.com/github/gitignore)
 
 ### License
 
-All the license is downloaded through [GitHub License API](https://developer.github.com/v3/licenses/).
+All the licenses are downloaded through [GitHub License API](https://developer.github.com/v3/licenses/).
 
 * GPL-2.0
 * Unlicense
