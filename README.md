@@ -5,7 +5,8 @@ Initialize your repository.
 ## Feature
 
 - [x] `.gitignore`
-- [ ] `License`
+- [x] `License`
+- [ ] args
 
 ## Toturail
 
@@ -21,10 +22,17 @@ All the file is downloaded from [github/gitignore](https://github.com/github/git
 
 ### License
 
-* GNU AGPLv3
-* GNU GPLv3
-* GNU LGPLv3
-* Mozilla Public License 2.0
-* Apache License 2.0
-* MIT License
-* The Unlicense
+All the license is downloaded through [GitHub License API](https://developer.github.com/v3/licenses/).
+
+* GPL-2.0
+* Unlicense
+* BSD-2-Clause
+* LGPL-2.1
+* GPL-3.0
+* MIT
+* BSD-3-Clause
+* Apache-2.0
+* EPL-2.0
+* MPL-2.0
+* LGPL-3.0
+* AGPL-3.0
