@@ -1,21 +1,15 @@
 import requests
 import base64
 
-URL = 'https://api.github.com/repos/github/gitignore/git/trees/master'
+from .utils import api_request, parse_json
+
+URL_IGNORE = 'https://api.github.com/repos/github/gitignore/git/trees/master'
 
 
 def get_all_files():
-    try:
-        res = requests.get(URL, timeout=5)
-    except requests.exceptions.Timeout as err:
-        print('Timeout: {}\n Make sure you can connect to GitHub'.format(err))
-
-    if res.status_code == requests.codes.ok:
-        try:
-            data = res.json()
-        except ValueError as err:
-            print('Wrong JSON data: {}'.format(err))
-
+    res = api_request(URL_IGNORE)
+    if res and res.status_code == requests.codes.ok:
+        data = parse_json(res)
         return data.get('tree', [])
 
     return []
@@ -32,18 +26,14 @@ def download_file(name):
             target = lang
             break
 
+    if not target:
+        print('Cannot find ignore file of {}.'.format(name))
+        return
+
     # download
-    try:
-        res = requests.get(target['url'], timeout=5)
-    except requests.exceptions.Timeout as err:
-        print('Timeout: {}\n Make sure you can connect to GitHub'.format(err))
-
-    if res.status_code == requests.codes.ok:
-        try:
-            data = res.json()
-        except ValueError as err:
-            print('Wrong JSON data: {}'.format(err))
-
+    res = api_request(target['url'])
+    if res and res.status_code == requests.codes.ok:
+        data = parse_json(res)
         if target['sha'] != data['sha']:
             print('File downloaded is corrupt.')
         else:
