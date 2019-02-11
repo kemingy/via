@@ -1,5 +1,6 @@
 import requests
 
+
 def api_request(url):
     try:
         res = requests.get(url, timeout=5)
@@ -8,6 +9,7 @@ def api_request(url):
         return None
 
     return res
+
 
 def parse_json(res):
     try:

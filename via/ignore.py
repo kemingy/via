@@ -2,12 +2,11 @@ import requests
 import base64
 
 from .utils import api_request, parse_json
-
-URL_IGNORE = 'https://api.github.com/repos/github/gitignore/git/trees/master'
+from .config import config
 
 
 def get_all_files():
-    res = api_request(URL_IGNORE)
+    res = api_request(config.IGNORE_API)
     if res and res.status_code == requests.codes.ok:
         data = parse_json(res)
         return data.get('tree', [])

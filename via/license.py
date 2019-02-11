@@ -1,11 +1,11 @@
 import requests
 
 from .utils import api_request, parse_json
+from .config import config
 
-URL_LICENSES = 'https://api.github.com/licenses'
 
 def get_all_licenses():
-    res = api_request(URL_LICENSES)
+    res = api_request(config.LICENSE_API)
     if res and res.status_code == requests.codes.ok:
         data = parse_json(res)
         return data if data else []
