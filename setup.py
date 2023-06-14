@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="via",
-    version="0.1.0",
+    version="0.1.1",
     author="Keming Yang",
     author_email="kemingy94@gmail.com",
     description="initialize your repos",
