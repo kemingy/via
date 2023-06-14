@@ -1,19 +1,19 @@
-import requests
+from http import HTTPStatus
 
-def api_request(url):
-    try:
-        res = requests.get(url, timeout=5)
-    except requests.exceptions.Timeout as err:
-        print('Timeout: {}\n Make sure you can connect to GitHub'.format(err))
-        return None
+import urllib3
 
-    return res
 
-def parse_json(res):
-    try:
-        data = res.json()
-    except ValueError as err:
-        print('Wrong JSON data: {}'.format(err))
-        return {}
+def http_request_get(url):
+    resp = urllib3.request(
+        "GET",
+        url,
+        headers={
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+    )
 
-    return data
+    if resp.status != HTTPStatus.OK:
+        raise Exception(f"Request failed: code={resp.status} msg={resp.data}")
+
+    return resp.json()
