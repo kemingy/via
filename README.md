@@ -7,7 +7,7 @@ Initialize your repository.
 - [x] `.gitignore`
 - [x] `License`
 
-## Toturail
+## Tutorial
 
 ```sh
 # download python .gitignore file and MIT License
