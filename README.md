@@ -6,14 +6,15 @@ Initialize your repository.
 
 - [x] `.gitignore`
 - [x] `License`
-- [x] args
 
-## Toturail
+## Tutorial
 
 ```sh
 # download python .gitignore file and MIT License
 # file will be saved to current dir
 via -i python -l mit
+# print to stdout
+via -i python --print
 ```
 
 ## Support
