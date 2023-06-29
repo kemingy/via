@@ -94,3 +94,6 @@ ENV/
 
 # Ruff
 .ruff_cache
+
+# version
+via/__version__.py
