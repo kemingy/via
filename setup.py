@@ -4,12 +4,15 @@ from io import open
 
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
+
+with open(path.join(here, "requirements.txt"), encoding="utf-8") as f:
+    requires = f.read().splitlines()
 
 setup(
     name="via",
-    version="0.1.1",
+    version="0.1.2",
     author="Keming Yang",
     author_email="kemingy94@gmail.com",
     description="initialize your repos",
@@ -22,10 +25,10 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=['requests'],
+    install_requires=requires,
     entry_points={
-        'console_scripts': [
-            'via=via:main',
+        "console_scripts": [
+            "via=via:main",
         ],
     },
 )
